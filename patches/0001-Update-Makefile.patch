@@ -1,0 +1,38 @@
+From 3b7ebf1499d089779259e45291ef6972e879aabb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E4=BD=A0=E5=AE=B6=E8=87=AD=E7=8B=97=E5=B1=8E?=
+ <42485691+AutoCONFIG@users.noreply.github.com>
+Date: Thu, 10 Feb 2022 13:47:08 +0800
+Subject: [PATCH 1/2] Update Makefile
+
+---
+ Makefile | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 66c88b0..fb6a970 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2272,11 +2272,12 @@ ifeq ($(CONFIG_RTL8723B), y)
+ $(MODULE_NAME)-$(CONFIG_MP_INCLUDED)+= core/rtw_bt_mp.o
+ endif
+ 
++ifneq ($(CONFIG_RTL8822BU),)
+ obj-$(CONFIG_RTL8822BU) := $(MODULE_NAME).o
+-
+-endif
+-
++else
+ export CONFIG_RTL8822BU = m
++obj-m := $(MODULE_NAME).o
++endif
+ 
+ all: modules
+ 
+@@ -2349,3 +2350,4 @@ clean:
+ 	rm -fr Module.symvers ; rm -fr Module.markers ; rm -fr modules.order
+ 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
+ 	rm -fr .tmp_versions
++endif
+-- 
+2.25.1
+
