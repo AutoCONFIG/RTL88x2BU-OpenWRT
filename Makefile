@@ -28,7 +28,7 @@ define KernelPackage/rtl8812bu-shoko
   DEPENDS:=+kmod-cfg80211 +kmod-usb-core +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT
   FILES:=\
 	$(PKG_BUILD_DIR)/88x2bu.ko
-  AUTOLOAD:=$(call AutoProbe,rtl8812bu)
+  AUTOLOAD:=$(call AutoProbe,88x2bu)
   PROVIDES:=kmod-rtl8812bu
 endef
 
