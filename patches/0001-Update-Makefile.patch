@@ -1,0 +1,47 @@
+From ce661d5dce5654ca9e786c58e8d923a05c71d448 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E4=BD=A0=E5=AE=B6=E8=87=AD=E7=8B=97=E5=B1=8E?=
+ <42485691+AutoCONFIG@users.noreply.github.com>
+Date: Fri, 11 Feb 2022 10:44:50 +0800
+Subject: [PATCH] Update Makefile
+
+---
+ Makefile | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 66c88b0..9dc9a3b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -13,7 +13,7 @@ EXTRA_CFLAGS += -Wno-unused-value
+ EXTRA_CFLAGS += -Wno-unused-label
+ EXTRA_CFLAGS += -Wno-unused-parameter
+ EXTRA_CFLAGS += -Wno-unused-function
+-EXTRA_CFLAGS += -Wno-unused
++#EXTRA_CFLAGS += -Wno-unused
+ #EXTRA_CFLAGS += -Wno-uninitialized
+ 
+ GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
+@@ -2272,11 +2272,12 @@ ifeq ($(CONFIG_RTL8723B), y)
+ $(MODULE_NAME)-$(CONFIG_MP_INCLUDED)+= core/rtw_bt_mp.o
+ endif
+ 
++ifneq ($(CONFIG_RTL8822BU),)
+ obj-$(CONFIG_RTL8822BU) := $(MODULE_NAME).o
+-
+-endif
+-
++else
+ export CONFIG_RTL8822BU = m
++obj-m := $(MODULE_NAME).o
++endif
+ 
+ all: modules
+ 
+@@ -2349,3 +2350,4 @@ clean:
+ 	rm -fr Module.symvers ; rm -fr Module.markers ; rm -fr modules.order
+ 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
+ 	rm -fr .tmp_versions
++endif
+-- 
+2.25.1
+

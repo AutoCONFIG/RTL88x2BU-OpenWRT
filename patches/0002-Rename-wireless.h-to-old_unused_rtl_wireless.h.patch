@@ -1,0 +1,18 @@
+From 7b015fa0c4572bf418f4da547463ff6ceb3a88be Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E4=BD=A0=E5=AE=B6=E8=87=AD=E7=8B=97=E5=B1=8E?=
+ <42485691+AutoCONFIG@users.noreply.github.com>
+Date: Thu, 10 Feb 2022 13:48:09 +0800
+Subject: [PATCH 2/2] Rename wireless.h to old_unused_rtl_wireless.h
+
+---
+ include/linux/{wireless.h => old_unused_rtl_wireless.h} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename include/linux/{wireless.h => old_unused_rtl_wireless.h} (100%)
+
+diff --git a/include/linux/wireless.h b/include/linux/old_unused_rtl_wireless.h
+similarity index 100%
+rename from include/linux/wireless.h
+rename to include/linux/old_unused_rtl_wireless.h
+-- 
+2.25.1
+
