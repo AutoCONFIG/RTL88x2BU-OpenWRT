@@ -1,49 +1,30 @@
 # RTL88x2BU-OpenWRT
+## 此仓库正在开发调试中，欢迎提交错误报告
 
-Driver for 802.11ac USB adapter with RTL8812BU chipset, only STA/Monitor mode is supported, no AP mode.
+适用于RTL88x2BU USB WiFi适配器的Linux/OpenWrt驱动
 
-A few known wireless cards that use this driver include:
-* [Fastoe AC1200 USB Wi-Fi Adapter](https://www.amazon.com/1200Mbps-ChromeBook-802-11ac-Compatible-Raspbian/dp/B081TGWCVB/ref=as_li_ss_tl?m=A9879GOT1YWJ2&marketplaceID=ATVPDKIKX0DER&qid=1581225299&s=merchant-items&sr=1-3&linkCode=ll1&tag=fastoe-20&linkId=5648949a51280f0323dd599dc27dbae4&language=en_US)
-* Cudy WU1200 AC1200 High Gain USB Wi-Fi Adapter
-* TP-Link Archer T3U
-* TP-Link Archer T3U Plus
-* TP-Link Archer T4U V3
-* Linksys WUSB6400M
-* Dlink DWA-181
-* Dlink DWA-182
+支持的设备包括但不限于如下：
+* ALFA AWUS036ACU
+* ASUS AC1300 USB-AC55 B1
+* ASUS AC53 Nano
+* ASUS U2
+* Cudy WU1400
+* Edimax EW-7822UAD
+* Edimax EW-7822ULC
+* Edimax EW-7822UTC
+* EDUP EP-AC1605GS
+* FIDECO 6B21-AC1200M
+* Linksys WUSB6300 V2
+* NetGear A6150
+* TRENDnet TEW-808UBM
+* Numerous additional products that are based on the supported chipsets
 
-### For kernel 5.11 or later, please clone the v5.8.7 branch:
+### Linux/OpenWrt编译方法:
 ```bash
-clone the new branch:
-sudo apt update
-sudo apt install -y dkms git bc
-git clone -b v5.8.7 https://github.com/fastoe/RTL8812BU.git
-cd RTL8812BU
+clone the repository to openwrt-src package:
+git clone https://github.com/AutoCONFIG/RTL88x2BU-OpenWRT.git
+cd openwrt-src root
+make menuconfig
+check rtl88x2bu
 make
-sudo make install
-sudo reboot
-```
-
-### For 5.10 kernel, please clone the v5.6.1 branch:
-```bash
-clone the new branch:
-sudo apt update
-sudo apt install -y dkms git bc
-git clone -b v5.6.1 https://github.com/fastoe/RTL8812BU.git
-cd RTL8812BU
-make
-sudo make install
-sudo reboot
-```
-
-### For 5.9 and previous versions:
-```bash
-clone the new branch:
-sudo apt update
-sudo apt install -y dkms git bc
-git clone https://github.com/fastoe/RTL8812BU.git
-cd RTL8812BU
-make
-sudo make install
-sudo reboot
 ```
