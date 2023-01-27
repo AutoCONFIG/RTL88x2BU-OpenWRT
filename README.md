@@ -21,10 +21,10 @@
 
 ### Linux/OpenWrt编译方法:
 ```bash
-clone the repository to openwrt-src package:
+clone the repository to "openwrt-src/package" dir:
 git clone https://github.com/AutoCONFIG/RTL88x2BU-OpenWRT.git
-cd openwrt-src root
+cd "openwrt-src" dir
 make menuconfig
-check rtl88x2bu
-make
+select "> Kernel modules > Wireless Drivers > kmod-rtl88x2bu"
+make V=s
 ```
