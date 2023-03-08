@@ -1,5 +1,6 @@
 # RTL88x2BU-OpenWRT
-## 此仓库正在开发调试中，欢迎提交错误报告
+## 请不要再关注此仓库，此仓库属于调试性质，并不能工作。
+## Please don't STAR, it's DEBUG repository,it can't work.
 
 适用于RTL88x2BU USB WiFi适配器的Linux/OpenWrt驱动
 
